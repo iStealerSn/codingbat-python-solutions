@@ -87,7 +87,6 @@ def no_teen_sum(a, b, c):
     sum_ = fix_teen(a) + fix_teen(b) + fix_teen(c)
     return sum_
 
-
 def fix_teen(n):
     return n if n not in [13, 14, 17, 18, 19] else 0
 
@@ -119,3 +118,17 @@ def close_far(a, b, c):
   return (abs(abs(b)-abs(c))>=2) and \
   ((abs(abs(b)-abs(a))<=1 and abs(abs(c)-abs(a))>=2) \
   or (abs(abs(c)-abs(a))<=1 and abs(abs(b)-abs(a))>=2))
+
+
+# make_chocolate 
+"""We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). 
+Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.
+For example - make_chocolate(4, 1, 9) → 4"""
+
+def make_chocolate(small, big, goal):
+    for big_ in range(big+1):
+        if (big_*5) <= goal:
+            final = big_*5
+            
+    result = final - goal
+    return abs(result) if abs(result) <= small else -1
